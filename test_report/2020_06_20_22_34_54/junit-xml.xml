@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="1" hostname="jiangguo" name="pytest" skipped="0" tests="1" time="26.899" timestamp="2020-06-20T22:34:54.712044"><testcase classname="test_dir.test_baidu.TestSearch" file="test_dir\test_baidu.py" line="19" name="test_baidu_search_case" time="21.018"><failure message="AssertionError: assert &apos;pytest_百度搜索&apos; == &apos;pyst_百度搜索&apos;
+  - pyst_百度搜索
+  + pytest_百度搜索
+  ?   ++">self = &lt;pyautotest.test_dir.test_baidu.TestSearch object at 0x000002049AD83A20&gt;
+browser = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session=&quot;2d6dcf8c7b7c2377e4c074e193a36c07&quot;)&gt;
+base_url = &apos;https://www.baidu.com&apos;
+
+    def test_baidu_search_case(self, browser, base_url):
+        page = BaiduPage(browser)
+        page.get(base_url)
+        page.search_input = &quot;pytest&quot;
+        page.search_button.click()
+        time.sleep(2)
+&gt;       assert browser.title == &quot;pyst_百度搜索&quot;
+E       AssertionError: assert &apos;pytest_百度搜索&apos; == &apos;pyst_百度搜索&apos;
+E         - pyst_百度搜索
+E         + pytest_百度搜索
+E         ?   ++
+
+test_dir\test_baidu.py:26: AssertionError</failure></testcase></testsuite></testsuites>
